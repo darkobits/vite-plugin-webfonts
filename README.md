@@ -6,13 +6,9 @@
   <a href="https://conventionalcommits.org"><img src="https://img.shields.io/static/v1?label=commits&message=conventional&style=flat-square&color=398AFB"></a>
 </p>
 
-<br />
-
-Generate `@font-face` declarations for your font assets. 💁‍♀️
-
 ## Features
 
-* Programmatically generate `@font-face` declarations for font assets.
+* Programmatically generate `@font-face` declarations for your font assets. 💁‍♀️
 * Emit CSS files and `<link>` tags or an inline `<style>` tag.
 
 ## Install
