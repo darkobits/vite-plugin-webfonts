@@ -1,0 +1,35 @@
+{
+  "name": "vite-plugin-webfonts",
+  "version": "0.1.0",
+  "license": "WTFPL",
+  "description": "Generate @font-face declarations for your font assets. 💁‍♀️",
+  "author": "darkobits",
+  "engines": {
+    "node": ">=12",
+    "npm": ">=6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darkobits/vite-plugin-webfonts.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "scripts": {
+    "prepare": "nr prepare",
+    "help": "nr --scripts"
+  },
+  "peerDependencies": {
+    "vite": "^2.7.0"
+  },
+  "dependencies": {
+    "@darkobits/log": "^2.0.0-beta.16",
+    "change-case": "^4.1.2",
+    "fs-extra": "^10.0.0"
+  },
+  "devDependencies": {
+    "@darkobits/ts": "^0.8.11",
+    "@types/fs-extra": "^9.0.13"
+  }
+}
