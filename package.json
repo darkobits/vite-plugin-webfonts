@@ -12,6 +12,14 @@
     "type": "git",
     "url": "git+https://github.com/darkobits/vite-plugin-webfonts.git"
   },
+  "keywords": [
+    "vite-plugin",
+    "fonts",
+    "webfonts",
+    "typography",
+    "woff",
+    "woff2"
+  ],
   "files": [
     "dist"
   ],
