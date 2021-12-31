@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-webfonts",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "WTFPL",
   "description": "Generate @font-face declarations for your font assets. 💁‍♀️",
   "author": "darkobits",
