@@ -84,20 +84,24 @@ export function buildFontFaceDeclarations(fonts: Array<FontFamily>, opts: Plugin
     // Ensure font names with spaces are quoted.
     const family = quoteMultiWord(fontFamily.family);
 
+    const localValues = ensureIsArray(fontFamily.local).map(localFont => localFont && `local("${localFont}")`).filter(Boolean);
+
     // Map each font face in the family into a @font-face declaration.
-    const fontFaceDeclarations = fontFamily.variants.map(fontFace => {
-      const { src, ...attributes } = fontFace;
+    const fontFaceDeclarations = fontFamily.variants.map(fontVariant => {
+      const { src, format, ...attributes } = fontVariant;
 
       // Map each source into a valid url() value with optional format()
       // hint.
-      const srcValue = ensureIsArray(src).map(fileName => {
-        const format = inferFormat(fileName);
-        const urlValue = format
-          ? `url(${config.base}${fileName}) format('${format}')`
+      const urlValues = ensureIsArray(src).map(fileName => {
+        const finalFormat = format ?? inferFormat(fileName);
+        const urlValue = finalFormat
+          ? `url(${config.base}${fileName}) format("${finalFormat}")`
           : `url(${config.base}${fileName})`;
 
         return urlValue;
-      }).join(', ');
+      });
+
+      const srcValue = [...localValues, ...urlValues].join(', ');
 
       return [
         '@font-face {',

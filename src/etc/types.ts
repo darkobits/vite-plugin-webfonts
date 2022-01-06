@@ -105,6 +105,13 @@ export interface FontFamily {
   family: string;
 
   /**
+   * Optional `local()` directive to use in `src` attributes for this family.
+   *
+   * See: https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face#description
+   */
+  local?: string | Array<string>;
+
+  /**
    * Array of individual variants to load for this family.
    */
   variants: Array<FontVariant>;
