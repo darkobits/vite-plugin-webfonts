@@ -8,6 +8,12 @@ export interface FontVariant {
   src: string | Array<string>;
 
   /**
+   * Optionally provide an explicit `format()` hint to be used in the `src`
+   * attribute for this variant.
+   */
+  format?: string;
+
+  /**
    * `font-weight` for this variant.
    *
    * See https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-weight
@@ -118,6 +124,27 @@ export interface FontFamily {
 }
 
 
+export interface FamilyFromFilesOptions {
+  family: FontFamily['family'];
+  local?: FontFamily['local'];
+
+  /**
+   * Pattern or array of patterns that should be included in this font family.
+   * Paths are assumed to be relative to `config.root`.
+   */
+  include: string | Array<string>;
+
+  /**
+   * Function that will be passed a single matched path and should return a
+   * partial `FontVariant` object.
+   *
+   * Note: The matched path will be used as the `src` property for the
+   * FontVariant, so it is not required.
+   */
+  variants: (path: string) => Omit<FontVariant, 'src'>;
+}
+
+
 /**
  * Configuration object accepted by vite-plugin-fonts.
  */
@@ -145,3 +172,17 @@ export interface PluginOptions {
    */
   verbose?: boolean;
 }
+
+
+/**
+ * Object passed to configuration functions.
+ */
+export interface PluginOptionsContext {
+  familyFromFiles: (opts: FamilyFromFilesOptions) => FontFamily;
+}
+
+
+/**
+ * Signature of configuration functions.
+ */
+export type PluginOptionsFactory = (context: PluginOptionsContext) => PluginOptions;

@@ -1,8 +1,14 @@
 import { paramCase } from 'change-case';
+import globby from 'globby';
 
 import log from 'lib/log';
 
-import type { FontFamily, PluginOptions } from 'etc/types';
+import type {
+  FontFamily,
+  FontVariant,
+  FamilyFromFilesOptions,
+  PluginOptions
+} from 'etc/types';
 import type { ResolvedConfig } from 'vite';
 
 
@@ -122,4 +128,34 @@ export function buildFontFaceDeclarations(fonts: Array<FontFamily>, opts: Plugin
 
     return fontFaceDeclarations;
   }).join('\n\n');
+}
+
+
+/**
+ * Provided a Vite configuration object, returns a function that generates a
+ * `FontFamily` object from a set of matched files.
+ */
+export function familyFromFilesFactory(config: ResolvedConfig) {
+  return (opts: FamilyFromFilesOptions) => {
+    const matchedFiles = globby.sync(opts.include, {
+      cwd: config.root || ''
+    });
+
+    const variants = matchedFiles.map(matchedFile => {
+      const variant = opts.variants(matchedFile);
+
+      return {
+        ...variant,
+        src: matchedFile
+      } as FontVariant;
+    });
+
+    const family = {
+      family: opts.family,
+      local: opts.local,
+      variants
+    } as FontFamily;
+
+    return family;
+  };
 }
