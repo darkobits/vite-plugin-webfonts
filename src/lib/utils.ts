@@ -14,10 +14,13 @@ import type { ResolvedConfig } from 'vite';
  */
 function inferFormat(filePath: string) {
   const formats: Record<string, string> = {
-    woff2: 'woff2',
     woff: 'woff',
+    woff2: 'woff2',
+    ttf: 'truetype',
     otf: 'opentype',
-    ttf: 'truetype'
+    eot: 'embedded-opentype',
+    svg: 'svg',
+    svgz: 'svg'
   };
 
   const extension = filePath.split('.').pop();
