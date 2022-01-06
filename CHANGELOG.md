@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/darkobits/vite-plugin-webfonts/compare/v0.1.1...v0.2.0) (2022-01-06)
+
+
+### 🛠 Refactoring
+
+* Infer `format()` hint from `.eot`. ([1747f62](https://github.com/darkobits/vite-plugin-webfonts/commit/1747f6202961de93278548d39263263bc8d617eb))
+
+
+### ✨ Features
+
+* Add `familyFromFiles` helper. ([94d83c1](https://github.com/darkobits/vite-plugin-webfonts/commit/94d83c1afdf64eed6574e0104bac6dcb995f40f3))
+* Add support for `local()` in `src` values. ([af3b695](https://github.com/darkobits/vite-plugin-webfonts/commit/af3b6958bc9c35bb38762801094f64f8ab8a14bc))
+
 ### [0.1.1](https://github.com/darkobits/vite-plugin-webfonts/compare/v0.1.0...v0.1.1) (2021-12-31)
 
 
