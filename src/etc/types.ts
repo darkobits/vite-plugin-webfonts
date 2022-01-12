@@ -124,27 +124,6 @@ export interface FontFamily {
 }
 
 
-export interface FamilyFromFilesOptions {
-  family: FontFamily['family'];
-  local?: FontFamily['local'];
-
-  /**
-   * Pattern or array of patterns that should be included in this font family.
-   * Paths are assumed to be relative to `config.root`.
-   */
-  include: string | Array<string>;
-
-  /**
-   * Function that will be passed a single matched path and should return a
-   * partial `FontVariant` object.
-   *
-   * Note: The matched path will be used as the `src` property for the
-   * FontVariant, so it is not required.
-   */
-  variants: (path: string) => Omit<FontVariant, 'src'>;
-}
-
-
 /**
  * Configuration object accepted by vite-plugin-fonts.
  */
@@ -174,10 +153,35 @@ export interface PluginOptions {
 }
 
 
+export interface FamilyFromFilesOptions {
+  family: FontFamily['family'];
+  local?: FontFamily['local'];
+
+  /**
+   * Pattern or array of patterns that should be included in this font family.
+   * Paths are assumed to be relative to `config.root`.
+   */
+  include: string | Array<string>;
+
+  /**
+   * Function that will be passed a single matched path and should return a
+   * partial `FontVariant` object.
+   *
+   * Note: The matched path will be used as the `src` property for the
+   * FontVariant, so it is not required.
+   */
+  variants: (path: string) => Omit<FontVariant, 'src'>;
+}
+
+
 /**
  * Object passed to configuration functions.
  */
 export interface PluginOptionsContext {
+  /**
+   * Programmatically generates a `FontFamily` descriptor by matching font
+   * assets using glob patterns.
+   */
   familyFromFiles: (opts: FamilyFromFilesOptions) => FontFamily;
 }
 

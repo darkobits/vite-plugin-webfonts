@@ -2,7 +2,7 @@
   "name": "vite-plugin-webfonts",
   "version": "0.2.0",
   "license": "WTFPL",
-  "description": "Generate @font-face declarations for your font assets. 💁‍♀️",
+  "description": "Generate @font-face declarations for your local font assets. 💁‍♀️",
   "author": "darkobits",
   "engines": {
     "node": ">=12",

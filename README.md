@@ -2,9 +2,10 @@
 <p align="center">
   <a href="https://www.npmjs.com/package/vite-plugin-webfonts"><img src="https://img.shields.io/npm/v/vite-plugin-webfonts.svg?style=flat-square&color=398AFB"></a>
   <a href="https://github.com/darkobits/vite-plugin-webfonts/actions?query=workflow%3Aci"><img src="https://img.shields.io/github/workflow/status/darkobits/vite-plugin-webfonts/ci/master?style=flat-square"></a>
-  <a href="https://depfu.com/github/darkobits/vite-plugin-webfonts"><img src="https://img.shields.io/depfu/darkobits/vite-plugin-webfonts?style=flat-square"></a>
   <a href="https://conventionalcommits.org"><img src="https://img.shields.io/static/v1?label=commits&message=conventional&style=flat-square&color=398AFB"></a>
 </p>
+
+
 
 ## Features
 
@@ -19,7 +20,7 @@ npm install --save-dev vite-plugin-webfonts
 
 ## Use
 
-This plugin accepts an [`Options`](/src/etc/types.ts#L117) object for
+This plugin accepts an [`Options`](/src/etc/types.ts#L130) object for
 configuration:
 
 > `vite.config.js`
@@ -33,7 +34,10 @@ export default defineConfig(() => ({
     webfontsPlugin({
       fonts: [{
         // The `font-family` value used for each variant.
-        family: 'Comic Sans MS',
+        family: 'Comic Sans',
+        // Optionally prepend a local() directive to the `src` list for each
+        // variant of this font family.
+        local: 'Comic Sans MS',
         // Variants may specify any CSS rule that is valid in a @font-face
         // block. For idiomatic JavaScript, camel case keys will be converted to
         // kebab case and `font-` will be prefixed to rules as-needed. For
@@ -67,9 +71,9 @@ export default defineConfig(() => ({
 ```
 
 Assuming `emitCss` is enabled (default), the above configuration will produce
-the following output.
+the following output:
 
-### Development
+#### Development
 
 > `index.html` (excerpt)
 
@@ -78,54 +82,58 @@ the following output.
   <head>
     <style>
       @font-face {
-        font-family: 'Comic Sans MS';
+        font-family: 'Comic Sans';
         font-weight: 200;
-        src: url(/assets/comic-sans-light.woff) format('woff'),
-          url(/assets/comic-sans-light.woff2) format('woff2')
+        src: local('Comic Sans MS'),
+             url(/assets/comic-sans-light.woff) format('woff'),
+             url(/assets/comic-sans-light.woff2) format('woff2')
       }
 
       @font-face {
-        font-family: 'Comic Sans MS';
+        font-family: 'Comic Sans';
         font-weight: 400;
-        src: url(/assets/comic-sans-regular.woff) format('woff'),
-          url(/assets/comic-sans-regular.woff2) format('woff2')
+        src: local('Comic Sans MS'),
+             url(/assets/comic-sans-regular.woff) format('woff'),
+             url(/assets/comic-sans-regular.woff2) format('woff2')
       }
     </style>
   </head>
 </html>
 ```
 
-### Production
+#### Production
 
 > `index.html` (excerpt)
 
 ```html
 <html>
   <head>
-    <link rel="stylesheet" href="comic-sans-ms.css¹" />
+    <link rel="stylesheet" href="comic-sans-ms.css" />
   </head>
 </html>
 ```
 
-> `comic-sans-ms.css`¹
+> `fonts.css`
 
 ```css
 @font-face {
-  font-family: 'Comic Sans MS';
+  font-family: 'Comic Sans';
   font-weight: 200;
-  src: url(/assets/comic-sans-light.woff¹) format('woff'),
-    url(/assets/comic-sans-light.woff2¹) format('woff2')
+  src: local('Comic Sans MS'),
+       url(/assets/comic-sans-light.woff) format('woff'),
+       url(/assets/comic-sans-light.woff2) format('woff2')
 }
 
 @font-face {
-  font-family: 'Comic Sans MS';
+  font-family: 'Comic Sans';
   font-weight: 400;
-  src: url(/assets/comic-sans-regular.woff¹) format('woff'),
-    url(/assets/comic-sans-regular.woff2¹) format('woff2')
+  src: local('Comic Sans MS'),
+       url(/assets/comic-sans-regular.woff) format('woff'),
+       url(/assets/comic-sans-regular.woff2) format('woff2')
 }
 ```
 
-¹Final asset names may vary according to your Vite configuration.
+> **Note:** Final asset names may vary according to your Vite configuration.
 
 ## Advanced
 
@@ -159,7 +167,7 @@ export default defineConfig(() => ({
     webfontsPlugin(({ familyFromFiles }) => ({
       fonts: [
         familyFromFiles({
-          family: 'Comic Sans MS',
+          family: 'Comic Sans',
           // `include` may be a string or array of strings to pass to `globby`.
           include: 'assets/comic-sans-*',
           // Each matched font file is then passed to a `variants` function,
