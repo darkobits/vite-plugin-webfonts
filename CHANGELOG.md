@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/darkobits/vite-plugin-webfonts/compare/v0.2.0...v0.2.1) (2022-01-13)
+
+
+### 📖 Documentation
+
+* Update README. ([fae27c2](https://github.com/darkobits/vite-plugin-webfonts/commit/fae27c2e3685d694c1434de0a36cdbac9069bd3d))
+* Update README. ([7d69943](https://github.com/darkobits/vite-plugin-webfonts/commit/7d699432967bbad3e8063d23cb3d1a37cae0fd18))
+
+
+### ✨ Features
+
+* Preload font assets. ([fcc0f0b](https://github.com/darkobits/vite-plugin-webfonts/commit/fcc0f0bf30062aaf77c8cc205618ed8579205018))
+
 ## [0.2.0](https://github.com/darkobits/vite-plugin-webfonts/compare/v0.1.1...v0.2.0) (2022-01-06)
 
 
