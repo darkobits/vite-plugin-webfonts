@@ -164,33 +164,48 @@ export default function VitePluginWebfonts(userOpts: PluginOptions | PluginOptio
     if (!config) throw new Error('[vite-plugin-fonts] Configuration not resolved.');
     if (fonts.length === 0) return;
 
+    const tags = [];
+
     if (opts.emitCss && config.isProduction && cssFileName) {
       if (opts.verbose) log.info('Added <link> to index.html.');
 
-      return [{
+      tags.push({
         tag: 'link',
         attrs: {
-          id: opts.verbose ? 'vite-plugin-fonts' : undefined,
           rel: 'stylesheet',
           href: cssFileName
         }
-      }];
+      });
+
+      // Add a <link rel="preload"> tag for each font asset.
+      for (const fontFamily of fonts) {
+        for (const fontVariant of fontFamily.variants) {
+          for (const href of ensureIsArray(fontVariant.src)) {
+            tags.push({
+              tag: 'link',
+              attrs: {
+                rel: 'preload',
+                href
+              }
+            });
+          }
+        }
+      }
+    } else {
+      const children = buildFontFaceDeclarations(fonts, opts, config);
+      if (opts.verbose) log.info('Added <style> tag to index.html.');
+      if (opts.verbose) log.info(log.chalk.green(children));
+
+      tags.push({
+        tag: 'style',
+        attrs: {
+          type: 'text/css'
+        },
+        children: `\n${children}\n`
+      });
     }
 
-    const children = buildFontFaceDeclarations(fonts, opts, config);
-
-    if (opts.verbose) log.info('Added <style> tag to index.html.');
-
-    if (opts.verbose) log.info(log.chalk.green(children));
-
-    return [{
-      tag: 'style',
-      attrs: {
-        id: opts.verbose ? 'vite-plugin-fonts' : undefined,
-        type: 'text/css'
-      },
-      children: `\n${children}\n`
-    }];
+    return tags;
   };
 
 
