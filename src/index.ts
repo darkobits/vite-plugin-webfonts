@@ -185,6 +185,7 @@ export default function VitePluginWebfonts(userOpts: PluginOptions | PluginOptio
               tag: 'link',
               attrs: {
                 rel: 'preload',
+                as: 'font',
                 href
               }
             });
