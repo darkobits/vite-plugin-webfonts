@@ -108,7 +108,7 @@ the following output:
 ```html
 <html>
   <head>
-    <link rel="stylesheet" href="comic-sans-ms.css" />
+    <link rel="stylesheet" href="fonts.css" />
   </head>
 </html>
 ```
