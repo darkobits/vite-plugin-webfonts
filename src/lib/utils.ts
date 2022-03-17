@@ -1,5 +1,4 @@
 import { paramCase } from 'change-case';
-import globby from 'globby';
 
 import log from 'lib/log';
 
@@ -135,9 +134,11 @@ export function buildFontFaceDeclarations(fonts: Array<FontFamily>, opts: Plugin
  * Provided a Vite configuration object, returns a function that generates a
  * `FontFamily` object from a set of matched files.
  */
-export function familyFromFilesFactory(config: ResolvedConfig) {
+export async function familyFromFilesFactory(config: ResolvedConfig) {
+  const { globbySync } = await import('globby');
+
   return (opts: FamilyFromFilesOptions) => {
-    const matchedFiles = globby.sync(opts.include, {
+    const matchedFiles = globbySync(opts.include, {
       cwd: config.root || ''
     });
 

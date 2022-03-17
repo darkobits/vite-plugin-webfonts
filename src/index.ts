@@ -69,12 +69,12 @@ export default function VitePluginWebfonts(userOpts: PluginOptions | PluginOptio
    * Captures Vite configuration when it becomes available and computes final
    * options for the plugin.
    */
-  plugin.configResolved = resolvedConfig => {
+  plugin.configResolved = async resolvedConfig => {
     config = resolvedConfig;
 
     if (typeof userOpts === 'function') {
       const userOptsResult = userOpts({
-        familyFromFiles: familyFromFilesFactory(config)
+        familyFromFiles: await familyFromFilesFactory(config)
       });
 
       opts = {
@@ -121,21 +121,6 @@ export default function VitePluginWebfonts(userOpts: PluginOptions | PluginOptio
           })
         }))
       };
-
-      // if (opts.emitCss) {
-      //   const name = `${paramCase(fontFamily.family.toLowerCase())}.css`;
-      //   const source = buildFontFaceDeclarations([fontsForFamily], opts, config);
-
-      //   if (opts.verbose) log.info(log.chalk.green(source));
-
-      //   cssFileName = this.getFileName(this.emitFile({
-      //     type: 'asset',
-      //     name,
-      //     source
-      //   }));
-
-      //   if (opts.verbose) log.info(`Emitted ${log.chalk.green(cssFileName)}`);
-      // }
 
       return fontsForFamily;
     });
