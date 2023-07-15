@@ -1,7 +1,7 @@
 {
   "name": "vite-plugin-webfonts",
   "version": "0.2.2",
-  "license": "WTFPL",
+  "license": "Hippocratic",
   "description": "Generate @font-face declarations for your local font assets. 💁‍♀️",
   "author": "darkobits",
   "engines": {

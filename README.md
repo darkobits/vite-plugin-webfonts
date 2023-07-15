@@ -1,8 +1,42 @@
-<img src="https://user-images.githubusercontent.com/441546/147814145-f3f13973-83f1-410b-99ec-468cb554fc01.png" style="max-width: 100%" />
 <p align="center">
-  <a href="https://www.npmjs.com/package/vite-plugin-webfonts"><img src="https://img.shields.io/npm/v/vite-plugin-webfonts.svg?style=flat-square&color=398AFB"></a>
-  <a href="https://github.com/darkobits/vite-plugin-webfonts/actions?query=workflow%3Aci"><img src="https://img.shields.io/github/workflow/status/darkobits/vite-plugin-webfonts/ci/master?style=flat-square"></a>
-  <a href="https://conventionalcommits.org"><img src="https://img.shields.io/static/v1?label=commits&message=conventional&style=flat-square&color=398AFB"></a>
+  <picture>
+    <source
+      media="(prefers-color-scheme: dark)"
+      srcset="https://github.com/darkobits/vite-plugin-webfonts/assets/441546/2f781ff1-5b1b-450b-819b-968a9552ab7e"
+      width="100%"
+    >
+    <img
+      src="https://github.com/darkobits/vite-plugin-webfonts/assets/441546/555dd754-7b1e-416c-9cdf-9a1115833164"
+      width="100%"
+    >
+  </picture>
+</p>
+<p align="center">
+  <a
+    href="https://www.npmjs.com/package/@darkobits/vite-plugin-webfonts"
+  ><img
+    src="https://img.shields.io/npm/v/@darkobits/vite-plugin-webfonts.svg?style=flat-square"
+  ></a>
+  <a
+    href="https://github.com/darkobits/vite-plugin-webfonts/actions?query=workflow%3Aci"
+  ><img
+    src="https://img.shields.io/github/actions/workflow/status/darkobits/vite-plugin-webfonts/ci.yml?style=flat-square"
+  ></a>
+  <a
+    href="https://depfu.com/repos/github/darkobits/vite-plugin-webfonts"
+  ><img
+    src="https://img.shields.io/depfu/darkobits/vite-plugin-webfonts?style=flat-square"
+  ></a>
+  <a
+    href="https://conventionalcommits.org"
+  ><img
+    src="https://img.shields.io/static/v1?label=commits&message=conventional&style=flat-square&color=398AFB"
+  ></a>
+  <a
+    href="https://firstdonoharm.dev"
+  ><img
+    src="https://img.shields.io/static/v1?label=license&message=hippocratic&style=flat-square&color=753065"
+  ></a>
 </p>
 
 
