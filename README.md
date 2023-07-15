@@ -23,11 +23,6 @@
     src="https://img.shields.io/github/actions/workflow/status/darkobits/vite-plugin-webfonts/ci.yml?style=flat-square"
   ></a>
   <a
-    href="https://depfu.com/repos/github/vite-plugin-webfonts"
-  ><img
-    src="https://img.shields.io/depfu/dependencies/github/darkobits%2Fvite-plugin-webfonts?style=flat-square"
-  ></a>
-  <a
     href="https://conventionalcommits.org"
   ><img
     src="https://img.shields.io/static/v1?label=commits&message=conventional&style=flat-square&color=398AFB"
