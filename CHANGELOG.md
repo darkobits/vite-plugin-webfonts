@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0](https://github.com/darkobits/vite-plugin-webfonts/compare/v0.2.2...v1.0.0) (2023-07-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* This project is now distributed as pure ESM.
+* **deps:** This plugin now requires a minimum Vite version of 4.0.0 and a minimum Node version of 18.0.0.
+
+### 🏗 Chores
+
+* **deps:** Update dependencies. ([7611a0e](https://github.com/darkobits/vite-plugin-webfonts/commit/7611a0efaf779336db0cdf0b038fbcc372d2dfd4))
+* Update `LICENSE`. ([7f98031](https://github.com/darkobits/vite-plugin-webfonts/commit/7f98031e0d00cd7acda2d16d99cd08cf856b19a4))
+
+
+### 📖 Documentation
+
+* Update README. ([1d83192](https://github.com/darkobits/vite-plugin-webfonts/commit/1d831920f8b9f91f0033098e68cd3ff69f26a9d8))
+* Update README. ([7b6b417](https://github.com/darkobits/vite-plugin-webfonts/commit/7b6b4173e4433ebb715bdde20950b913011a5812))
+
+
+### 🛠 Refactoring
+
+* Publish as ESM. ([ddcff77](https://github.com/darkobits/vite-plugin-webfonts/commit/ddcff772dc8da9d3cb70cb35fee9bbd6103544d5))
+
 ### [0.2.2](https://github.com/darkobits/vite-plugin-webfonts/compare/v0.2.1...v0.2.2) (2022-03-17)
 
 
