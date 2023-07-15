@@ -1,4 +1,4 @@
 import LogFactory from '@darkobits/log';
 
 
-export default LogFactory({ heading: 'vite-plugin-fonts' });
+export default LogFactory({ heading: 'vite-plugin-webfonts' });

@@ -1,10 +1,7 @@
 {
   "extends": "@darkobits/ts/tsconfig.json",
-  "include": ["src"],
   "compilerOptions": {
     "baseUrl": "src",
-    "outDir": "dist",
-    // Issues with Vite declarations.
-    "skipLibCheck": true
+    "outDir": "dist"
   }
 }

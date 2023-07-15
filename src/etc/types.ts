@@ -125,7 +125,7 @@ export interface FontFamily {
 
 
 /**
- * Configuration object accepted by vite-plugin-fonts.
+ * Configuration object accepted by vite-plugin-webfonts.
  */
 export interface PluginOptions {
   /**

@@ -1,6 +1,5 @@
 import path from 'path';
 
-// import { paramCase } from 'change-case';
 import fs from 'fs-extra';
 
 import log from 'lib/log';
@@ -62,7 +61,7 @@ export default function VitePluginWebfonts(userOpts: PluginOptions | PluginOptio
   /**
    * Plugin definition.
    */
-  const plugin: Plugin = { name: 'vite-plugin-fonts' };
+  const plugin: Plugin = { name: 'vite-plugin-webfonts' };
 
 
   /**
@@ -100,7 +99,7 @@ export default function VitePluginWebfonts(userOpts: PluginOptions | PluginOptio
    * development.
    */
   plugin.generateBundle = function() {
-    if (!config) throw new Error('[vite-plugin-fonts] Configuration not resolved.');
+    if (!config) throw new Error('[vite-plugin-webfonts] Configuration not resolved.');
     if (!config.isProduction) return;
 
     fonts = fonts.map<FontFamily>(fontFamily => {
@@ -146,7 +145,7 @@ export default function VitePluginWebfonts(userOpts: PluginOptions | PluginOptio
    * not run, url() values will be unaltered.
    */
   plugin.transformIndexHtml = () => {
-    if (!config) throw new Error('[vite-plugin-fonts] Configuration not resolved.');
+    if (!config) throw new Error('[vite-plugin-webfonts] Configuration not resolved.');
     if (fonts.length === 0) return;
 
     const tags = [];
