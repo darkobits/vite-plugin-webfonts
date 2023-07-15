@@ -2,20 +2,20 @@
   <picture>
     <source
       media="(prefers-color-scheme: dark)"
-      srcset="https://github.com/darkobits/vite-plugin-webfonts/assets/441546/2f781ff1-5b1b-450b-819b-968a9552ab7e"
+      srcset="https://github.com/darkobits/vite-plugin-webfonts/assets/441546/35670580-1b52-4a80-99df-0b0050ea61f8"
       width="100%"
     >
     <img
-      src="https://github.com/darkobits/vite-plugin-webfonts/assets/441546/555dd754-7b1e-416c-9cdf-9a1115833164"
+      src="https://github.com/darkobits/vite-plugin-webfonts/assets/441546/41dba1ec-2d38-49bc-b12e-bf309ab85bea"
       width="100%"
     >
   </picture>
 </p>
 <p align="center">
   <a
-    href="https://www.npmjs.com/package/@darkobits/vite-plugin-webfonts"
+    href="https://www.npmjs.com/package/vite-plugin-webfonts"
   ><img
-    src="https://img.shields.io/npm/v/@darkobits/vite-plugin-webfonts.svg?style=flat-square"
+    src="https://img.shields.io/npm/v/vite-plugin-webfonts.svg?style=flat-square"
   ></a>
   <a
     href="https://github.com/darkobits/vite-plugin-webfonts/actions?query=workflow%3Aci"
@@ -23,9 +23,9 @@
     src="https://img.shields.io/github/actions/workflow/status/darkobits/vite-plugin-webfonts/ci.yml?style=flat-square"
   ></a>
   <a
-    href="https://depfu.com/repos/github/darkobits/vite-plugin-webfonts"
+    href="https://depfu.com/repos/github/vite-plugin-webfonts"
   ><img
-    src="https://img.shields.io/depfu/darkobits/vite-plugin-webfonts?style=flat-square"
+    src="https://img.shields.io/depfu/dependencies/github/darkobits%2Fvite-plugin-webfonts?style=flat-square"
   ></a>
   <a
     href="https://conventionalcommits.org"
