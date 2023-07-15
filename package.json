@@ -4,6 +4,7 @@
   "license": "Hippocratic",
   "description": "Generate @font-face declarations for your local font assets. 💁‍♀️",
   "author": "darkobits",
+  "type": "module",
   "engines": {
     "node": ">=18",
     "npm": ">=8"
